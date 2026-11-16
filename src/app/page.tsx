@@ -1,7 +1,7 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
 import ThemeToggle from "@/components/ThemeToggle";
-import { links, profile } from "@/data/profile";
+import { profile } from "@/data/profile";
 
 export default function Home() {
   return (
@@ -14,13 +14,7 @@ export default function Home() {
       <Profile name={profile.name} bio={profile.bio} image={profile.image} />
 
       {/* 하단: 링크 카드 3개 (세로 배치) */}
-      <ul className="flex flex-col gap-6">
-        {links.map((link) => (
-          <li key={link.id}>
-            <LinkCard {...link} />
-          </li>
-        ))}
-      </ul>
+      <LinkList />
     </main>
   );
 }
